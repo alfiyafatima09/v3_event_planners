@@ -1,0 +1,60 @@
+# Node.js dependencies
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.env
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Golang dependencies and build files
+backend/bin/
+backend/pkg/
+backend/.env
+backend/*.exe
+backend/*.exe~
+backend/*.dll
+backend/*.so
+backend/*.dylib
+backend/*.test
+backend/*.out
+
+# Firebase configuration files (avoid exposing keys)
+frontend/firebase.json
+frontend/.firebase/
+frontend/.firebaserc
+frontend/firestore.rules
+frontend/firestore.indexes.json
+
+# Cloudinary credentials
+frontend/.cloudinary-config.js   # Cloudinary config file
+frontend/.env.cloudinary         # Cloudinary environment variables, if applicable
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Swap files (for vim users, etc.)
+*.swp
+
+# Docker files
+docker-compose.override.yml
+
+# PostgreSQL files (if applicable)
+*.sql
+*.sqlite
