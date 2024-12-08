@@ -123,3 +123,9 @@ interface Star {
       resizeCanvas
     };
   };
+
+
+
+
+
+
