@@ -13,10 +13,10 @@ import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "Book_Now", href: "#", current: false },
   { name: "Past-events", href: "#", current: false },
-  { name: "Feedback", href: "#", current: false },
+  { name: "Feedback", href: "/feedback", current: false },
 ];
 
 function classNames(...classes: string[]) {
