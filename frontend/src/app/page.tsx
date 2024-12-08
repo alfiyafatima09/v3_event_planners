@@ -2,13 +2,14 @@
 import React from "react";
 import StarBackground from "@/components/starBackground";
 import Image from "next/image";
+import EventsGrid from "@/components/EventBox";
 
 export default function Home() {
   return (
     <div>
       <StarBackground />
       <div className="mx-auto max-w-7xl sm:pt-0 sm:px-0 lg:px-8 lg:py-8">
-        <div className="relative isolate overflow-hidden px-6 pt-2 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-20 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 ">
+        <div className="relative isolate overflow-hidden px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-20 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 ">
           <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
             <h2 className="text-balance text-4xl font-bold tracking-tight animate-pulse bg-gradient-to-r from-pink-400 via-white to-blue-400 bg-clip-text text-transparent sm:text-5xl">
               Welcome to V3_Events
@@ -34,6 +35,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+      <EventsGrid />
       </div>
     </div>
   );
