@@ -1,7 +1,7 @@
 # v3_event_planners
 
 ## Overview
-v3_event_planners is an event planning website built with Next.js for the frontend and Golang for the backend. The project aims to provide a seamless experience for users to browse and book event planning services.
+v3_event_planners is a website designed for a friend's event planning startup. The platform aims to provide a seamless user experience for browsing and booking event planning services. Built with Next.js for the frontend and Golang for the backend, the project streamlines the process of connecting clients with professional event planners, helping them organize and manage events with ease.
 
 ## Features
 * Event categories including:
