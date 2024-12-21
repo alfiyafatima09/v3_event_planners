@@ -60,7 +60,7 @@ Before you get started, ensure you have the following installed:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/yourusername/v3_event_planners.git
+git clone https://github.com/alfiyafatima09/v3_event_planners.git
 ```
 
 ### Step 2: Install Dependencies
@@ -87,22 +87,6 @@ Your application will be running at [http://localhost:3000](http://localhost:300
 ---
 
 ## 🤝 *Contributing*
-We welcome contributions to make *v3_event_planners* even better! To contribute:
-1. 🍴 Fork the repository.
-2. 🌿 Create a feature branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. 💡 Commit your changes with clear messages:
-   ```bash
-   git commit -m "Add: Your feature description"
-   ```
-4. 🚀 Push to your branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. 🔄 Open a pull request.
+We welcome contributions to make *v3_event_planners* even better! If you want to contribute, refer to our [CONTRIBUTING.md](contribution.md) for detailed guidelines.
 
 ---
-
-
