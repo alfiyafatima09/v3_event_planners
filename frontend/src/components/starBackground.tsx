@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { createStarAnimation } from '@/utils/starAnimation';
+import { createStarAnimation } from '@/components/utils/starAnimation';
 
 const StarBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
