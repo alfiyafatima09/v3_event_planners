@@ -1,15 +1,17 @@
 "use client";
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 interface EventCardProps {
   imageUrl: string;
   title: string;
   index: number;
+  link: string; 
 }
 
-const EventCard: React.FC<EventCardProps> = ({ imageUrl, title, index }) => {
+const EventCard: React.FC<EventCardProps> = ({ imageUrl, title, index, link }) => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -39,45 +41,47 @@ const EventCard: React.FC<EventCardProps> = ({ imageUrl, title, index }) => {
       id={`event-card-${index}`}
       className="w-full group relative overflow-hidden rounded-2xl translate-y-10 opacity-0 transition-all duration-700 ease-out"
     >
-      <a href="#" className="block">
-        <div className="aspect-square w-full overflow-hidden rounded-2xl relative">
-          <Image 
-            src={imageUrl} 
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-          
-          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-            <div className="flex justify-between items-end">
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white transition-all duration-300 group-hover:text-pink-300">
-                  {title}
-                </h3>
-                <div className="h-1 bg-pink-500 mt-2 w-12 transition-all duration-300 group-hover:w-24" />
+      <Link href={link} legacyBehavior>
+        <a className="block">
+          <div className="aspect-square w-full overflow-hidden rounded-2xl relative">
+            <Image 
+              src={imageUrl} 
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+              <div className="flex justify-between items-end">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white transition-all duration-300 group-hover:text-pink-300">
+                    {title}
+                  </h3>
+                  <div className="h-1 bg-pink-500 mt-2 w-12 transition-all duration-300 group-hover:w-24" />
+                </div>
+                
+                <ArrowRight 
+                  className="w-6 h-6 text-white transform translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" 
+                />
               </div>
-              
-              <ArrowRight 
-                className="w-6 h-6 text-white transform translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" 
-              />
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </Link>
     </div>
   );
 };
 
 const EventsGrid = () => {
   const events = [
-    { id: 1, title: "Birthday Parties", imageUrl: "/img1.jpg" },
-    { id: 2, title: "Engagements", imageUrl: "/img1.jpg" },
-    { id: 3, title: "Housewarming", imageUrl: "/img1.jpg" },
-    { id: 4, title: "Puja Events", imageUrl: "/img1.jpg" },
-    { id: 5, title: "Baby Showers", imageUrl: "/img1.jpg" },
-    { id: 6, title: "Naming Ceremony", imageUrl: "/img1.jpg" },
+    { id: 1, title: "Birthday Parties", imageUrl: "/img1.jpg", link: "/birthday" },
+    { id: 2, title: "Engagements", imageUrl: "/img1.jpg", link: "/other" },
+    { id: 3, title: "Housewarming", imageUrl: "/img1.jpg", link: "/house_warming" },
+    { id: 4, title: "Puja Events", imageUrl: "/img1.jpg", link: "/puja" },
+    { id: 5, title: "Baby Showers", imageUrl: "/img1.jpg", link: "/other" },
+    { id: 6, title: "Naming Ceremony", imageUrl: "/img1.jpg", link: "/other" },
   ];
 
   useEffect(() => {
