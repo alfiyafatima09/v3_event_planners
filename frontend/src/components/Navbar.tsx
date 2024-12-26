@@ -24,7 +24,7 @@ const bookingOptions = [
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Past-events", href: "#", current: false },
+  { name: "Past-events", href: "/past_events", current: false },
   { name: "Feedback", href: "/feedback", current: false },
 ];
 
