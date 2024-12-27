@@ -35,7 +35,53 @@ export default function Home() {
             </div>
           </div>
         </div>
-      <EventsGrid />
+
+ {/* Stats Section */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-12">
+  {/* Events Conducted */}
+  <div className="group relative">
+    <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+    <div className="relative p-8 bg-black ring-1 ring-gray-900/5 leading-none flex flex-col items-center">
+      <h3 className="text-6xl font-bold text-white pb-2">
+        500+
+      </h3>
+      <p className="text-lg font-medium text-white mt-4">
+        Events Conducted
+      </p>
+      <div className="h-1 w-12 bg-gradient-to-r from-pink-500 to-blue-500 mt-4 group-hover:w-24 transition-all duration-300"></div>
+    </div>
+  </div>
+
+  {/* Years Experience */}
+  <div className="group relative">
+    <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+    <div className="relative p-8 bg-black ring-1 ring-gray-900/5 leading-none flex flex-col items-center">
+      <h3 className="text-6xl font-bold text-white pb-2">
+        10+
+      </h3>
+      <p className="text-lg font-medium text-white mt-4">
+        Years Experience
+      </p>
+      <div className="h-1 w-12 bg-gradient-to-r from-pink-500 to-blue-500 mt-4 group-hover:w-24 transition-all duration-300"></div>
+    </div>
+  </div>
+
+  {/* Happy Clients */}
+  <div className="group relative">
+    <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+    <div className="relative p-8 bg-black ring-1 ring-gray-900/5 leading-none flex flex-col items-center">
+      <h3 className="text-6xl font-bold text-white pb-2">
+        1000+
+      </h3>
+      <p className="text-lg font-medium text-white mt-4">
+        Happy Clients
+      </p>
+      <div className="h-1 w-12 bg-gradient-to-r from-pink-500 to-blue-500 mt-4 group-hover:w-24 transition-all duration-300"></div>
+    </div>
+  </div>
+</div>
+
+        <EventsGrid />
       </div>
     </div>
   );
