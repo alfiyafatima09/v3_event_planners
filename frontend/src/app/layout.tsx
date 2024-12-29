@@ -36,13 +36,11 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css"; // Ensure this contains your old styles
-import { AuthProvider } from './auth/AuthContext';
-import Navbar from '@/components/Navbar'; // Ensure Navbar has styles intact
-import Footer from '@/components/Footer'; // Ensure Footer has styles intact
-import { Exo_2 } from 'next/font/google';
-import LayoutWrapper from './LayoutWrapper';
+import Navbar from "@/components/Navbar"; // Ensure Navbar has styles intact
+import Footer from "@/components/Footer"; // Ensure Footer has styles intact
+import { Exo_2 } from "next/font/google";
 
-const roboto = Exo_2({ subsets: ['latin'], weight: '500' });
+const roboto = Exo_2({ subsets: ["latin"], weight: "500" });
 
 export const metadata: Metadata = {
   title: "V3_Events",
@@ -58,11 +56,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} bg-gray-100 text-gray-900`}>
-        <AuthProvider>
-          <Navbar />
-          <LayoutWrapper>{children}</LayoutWrapper>
-          <Footer />
-        </AuthProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
