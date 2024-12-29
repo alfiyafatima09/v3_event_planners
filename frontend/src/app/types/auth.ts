@@ -1,12 +1,13 @@
-import { User as FirebaseUser } from 'firebase/auth';
+import { User } from 'firebase/auth';
 
 export interface AuthFormData {
   email: string;
   password: string;
+  fullName?: string;
 }
 
 export interface AuthContextType {
-  user: FirebaseUser | null;  // Use Firebase's User type
+  user: User | null;
   loading: boolean;
   error: string | null;
   signIn: (data: AuthFormData) => Promise<void>;

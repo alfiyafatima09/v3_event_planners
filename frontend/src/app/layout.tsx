@@ -33,12 +33,14 @@
 //     </html>
 //   );
 // }
+// app/layout.tsx
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.css"; // Ensure this contains your old styles
 import { AuthProvider } from './auth/AuthContext';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar'; // Ensure Navbar has styles intact
+import Footer from '@/components/Footer'; // Ensure Footer has styles intact
 import { Exo_2 } from 'next/font/google';
+import LayoutWrapper from './LayoutWrapper';
 
 const roboto = Exo_2({ subsets: ['latin'], weight: '500' });
 
@@ -55,10 +57,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={`${roboto.className} bg-gray-100 text-gray-900`}>
         <AuthProvider>
           <Navbar />
-          {children}  {/* Removed ProtectedRoute wrapper from here */}
+          <LayoutWrapper>{children}</LayoutWrapper>
           <Footer />
         </AuthProvider>
       </body>
