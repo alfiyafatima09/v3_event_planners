@@ -128,7 +128,7 @@ const Signup = ({ onToggleAuth }: SignupProps) => {
           className="w-full flex items-center justify-center bg-gray-900/50 border border-gray-700 rounded-md py-2 text-sm text-gray-200 hover:bg-gray-800 transition-colors disabled:opacity-50"
           disabled={isLoading}
         >
-          <Image src="/logo.png" alt="Google Logo" width={20} height={20} className="mr-2" />
+          <Image src="/Google__G__logo.svg" alt="Google Logo" width={20} height={20} className="mr-2" />
           {isLoading ? 'Connecting...' : 'Sign in with Google'}
         </button>
       </div>

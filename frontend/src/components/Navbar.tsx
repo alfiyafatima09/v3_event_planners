@@ -137,8 +137,8 @@ export default function Navbar() {
                 <FaInstagram aria-hidden="true" className="h-7 w-7" />
               </button>
 
-              {/* Avatar - Redirect to Auth Page */}
-              <Link href="/auth" onClick={() => close()}>
+              {/* Avatar - Redirect to Login Page */}
+              <Link href="/login" onClick={() => close()}>
                 <Image
                   src="/avatar.png"
                   alt="avatar"
