@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from 'react';
+import { auth } from '@/app/lib/firebase';
+import { submitFeedback } from '@/lib/firestore';
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   name: string;
@@ -83,6 +86,7 @@ const TextArea: React.FC<TextAreaProps> = ({ label, ...props }) => (
 );
 
 function App() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -90,6 +94,21 @@ function App() {
     rating: '',
     feedback: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+
+  // Pre-fill email if user is logged in
+  React.useEffect(() => {
+    const user = auth.currentUser;
+    if (user && !formData.email) {
+      setFormData(prev => ({
+        ...prev,
+        email: user.email || '',
+        name: user.displayName || prev.name
+      }));
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -101,9 +120,42 @@ function App() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+
+    try {
+      const user = auth.currentUser;
+      await submitFeedback({
+        userId: user?.uid,
+        name: formData.name,
+        email: formData.email,
+        eventType: formData.eventType,
+        rating: formData.rating,
+        feedback: formData.feedback,
+      });
+      
+      setSuccess(true);
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        eventType: '',
+        rating: '',
+        feedback: ''
+      });
+      
+      setTimeout(() => {
+        setSuccess(false);
+        router.push('/');
+      }, 2000);
+    } catch (err: any) {
+      setError(err.message || 'Failed to submit feedback. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -117,6 +169,20 @@ function App() {
           <h2 className="text-white text-2xl font-bold mb-6 text-center">
             Event Feedback Form
           </h2>
+
+          {success && (
+            <div className="mb-4 p-4 bg-green-500/10 border border-green-500 rounded-md">
+              <p className="text-green-400 text-sm text-center">
+                ✅ Thank you for your feedback! Redirecting...
+              </p>
+            </div>
+          )}
+
+          {error && (
+            <div className="mb-4 p-4 bg-red-500/10 border border-red-500 rounded-md">
+              <p className="text-red-400 text-sm text-center">{error}</p>
+            </div>
+          )}
           
           <Input
             label="Full Name"
@@ -171,9 +237,10 @@ function App() {
 
           <button
             type="submit"
-            className="w-full bg-white text-black py-3 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
+            disabled={loading}
+            className="w-full bg-white text-black py-3 rounded-lg hover:bg-gray-200 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit Feedback
+            {loading ? 'Submitting...' : 'Submit Feedback'}
           </button>
         </form>
       </div>
