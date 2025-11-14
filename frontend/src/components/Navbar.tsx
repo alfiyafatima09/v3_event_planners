@@ -16,12 +16,12 @@ import { FaInstagram } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
 const bookingOptions = [
-  { name: "Birthday Parties", href: "/birthday" },
-  { name: "Engagements", href: "/other" },
-  { name: "Housewarming", href: "/house_warming" },
-  { name: "Puja Events", href: "/puja" },
-  { name: "Baby Showers", href: "/other" },
-  { name: "Naming Ceremony", href: "/other" },
+  { name: "Birthday Parties", href: "/order?category=birthday" },
+  { name: "Engagements", href: "/order?category=engagement" },
+  { name: "Housewarming", href: "/order?category=housewarming" },
+  { name: "Puja Events", href: "/order?category=puja" },
+  { name: "Baby Showers", href: "/order?category=babyShower" },
+  { name: "Naming Ceremony", href: "/order?category=namingCeremony" },
 ];
 
 const navigation = [

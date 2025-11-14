@@ -76,12 +76,12 @@ const EventCard: React.FC<EventCardProps> = ({ imageUrl, title, index, link }) =
 
 const EventsGrid = () => {
   const events = [
-    { id: 1, title: "Birthday Parties", imageUrl: "/img1.jpg", link: "/birthday" },
-    { id: 2, title: "Engagements", imageUrl: "/img1.jpg", link: "/other" },
-    { id: 3, title: "Housewarming", imageUrl: "/img1.jpg", link: "/house_warming" },
-    { id: 4, title: "Puja Events", imageUrl: "/img1.jpg", link: "/puja" },
-    { id: 5, title: "Baby Showers", imageUrl: "/img1.jpg", link: "/other" },
-    { id: 6, title: "Naming Ceremony", imageUrl: "/img1.jpg", link: "/other" },
+    { id: 1, title: "Birthday Parties", imageUrl: "/img1.jpg", category: "birthday" },
+    { id: 2, title: "Engagements", imageUrl: "/img1.jpg", category: "engagement" },
+    { id: 3, title: "Housewarming", imageUrl: "/img1.jpg", category: "housewarming" },
+    { id: 4, title: "Puja Events", imageUrl: "/img1.jpg", category: "puja" },
+    { id: 5, title: "Baby Showers", imageUrl: "/img1.jpg", category: "babyShower" },
+    { id: 6, title: "Naming Ceremony", imageUrl: "/img1.jpg", category: "namingCeremony" },
   ];
 
   useEffect(() => {
@@ -129,7 +129,9 @@ const EventsGrid = () => {
           {events.map((event, index) => (
             <EventCard 
               key={event.id} 
-              {...event} 
+              imageUrl={event.imageUrl}
+              title={event.title}
+              link={`/order?category=${event.category}`}
               index={index}
             />
           ))}

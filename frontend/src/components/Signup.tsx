@@ -133,7 +133,7 @@ const Signup = ({ onToggleAuth }: SignupProps) => {
         </button>
       </div>
 
-      <p className="text-center text-gray-400 text-xs md:text-sm mt-4">
+      <p className="text-center https://github.com/alfiyafatima09/BhawBhaw-Admin.gittext-gray-400 text-xs md:text-sm mt-4">
         Already have an account?{" "}
         <button
           type="button"

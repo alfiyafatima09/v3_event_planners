@@ -1,0 +1,24 @@
+.gradientTitle {
+  animation: gradient-x 15s ease infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.cardHover {
+  transition: all 0.3s ease;
+}
+
+.cardHover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -10px rgba(138, 75, 175, 0.2);
+}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface BdayDetailProps {
+interface EventDetailProps {
   detail: {
     image: string;
     info: string[];
@@ -10,7 +10,7 @@ interface BdayDetailProps {
   isReversed: boolean;
 }
 
-const BdayDetail: React.FC<BdayDetailProps> = ({ detail, isReversed }) => {
+const EventDetail: React.FC<EventDetailProps> = ({ detail, isReversed }) => {
   return (
     <div className="bg-gray-800/30 rounded-xl p-6 hover:bg-gray-800/50 transition-all duration-300">
       <div
@@ -65,4 +65,5 @@ const BdayDetail: React.FC<BdayDetailProps> = ({ detail, isReversed }) => {
   );
 };
 
-export default BdayDetail;
+export default EventDetail;
+
