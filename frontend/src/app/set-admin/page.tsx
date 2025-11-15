@@ -7,6 +7,7 @@ import { createOrUpdateUser } from '@/lib/firestore';
 
 export default function SetAdminPage() {
   const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string>('');
@@ -38,6 +39,7 @@ export default function SetAdminPage() {
       setTimeout(() => {
         router.push('/admin');
       }, 2000);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setStatus(`❌ Error: ${error.message}`);
     } finally {
@@ -102,7 +104,7 @@ export default function SetAdminPage() {
         <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/50 rounded">
           <p className="text-xs text-blue-400">
             <strong>Note:</strong> This will create/update your user document in Firestore with isAdmin: true.
-            After clicking, you'll be redirected to the admin dashboard.
+            After clicking, you will be redirected to the admin dashboard.
           </p>
         </div>
       </div>

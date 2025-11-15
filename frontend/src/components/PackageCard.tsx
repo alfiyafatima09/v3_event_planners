@@ -45,7 +45,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ package: pkg }) => {
       await createOrder({
         userId: user.uid,
         userEmail: user.email || '',
-        userName: user.displayName || undefined,
+        userName: user.displayName || '',
         packageId: String(pkg.id),
         packageCategory: pkg.category,
         packageName: `Package ${pkg.id}`,

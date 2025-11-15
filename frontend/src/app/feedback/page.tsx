@@ -151,6 +151,7 @@ function App() {
         setSuccess(false);
         router.push('/');
       }, 2000);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.message || 'Failed to submit feedback. Please try again.');
     } finally {

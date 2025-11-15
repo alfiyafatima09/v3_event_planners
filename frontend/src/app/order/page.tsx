@@ -19,7 +19,6 @@ const OrderPage = () => {
   const [packages, setPackages] = useState<any[]>([]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [categories, setCategories] = useState<Record<string, any>>({});
-
   const [loading, setLoading] = useState(true);
 
   // Fetch data from Firestore

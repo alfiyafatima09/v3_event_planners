@@ -155,7 +155,7 @@ export default function AdminOrdersPage() {
                         {order.createdAt.toDate()?.toLocaleDateString()}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{order.packageName}</h3>
+                    {/* <h3 className="text-xl font-bold text-white mb-2">{order.packageName}</h3> */}
                     <p className="text-gray-400 mb-1">
                       <span className="font-semibold">Customer:</span> {order.userName || order.userEmail}
                     </p>

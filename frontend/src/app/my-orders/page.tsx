@@ -175,9 +175,9 @@ export default function MyOrdersPage() {
                     </div>
 
                     {/* MAIN DETAILS */}
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    {/* <h3 className="text-xl font-bold text-white mb-2">
                       {order.packageName}
-                    </h3>
+                    </h3> */}
 
                     <p className="text-gray-400 mb-1">
                       <span className="font-semibold">Category:</span>{" "}

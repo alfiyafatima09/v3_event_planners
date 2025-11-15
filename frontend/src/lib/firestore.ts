@@ -225,10 +225,22 @@ export async function createOrder(order: Omit<Order, 'id' | 'createdAt' | 'updat
 export async function getOrders(userId: string, status?: string): Promise<Order[]> {
   const ordersRef = collection(db, "orders");
 
-  let q = query(ordersRef, where("userId", "==", userId));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let q = ordersRef as any;
+  if(userId){
+    q = query(ordersRef, where("userId", "==", userId));
+  }
 
+  // if (status) {
+  //   q = query(ordersRef, where("userId", "==", userId), where("status", "==", status));
+  // }
   if (status) {
-    q = query(ordersRef, where("userId", "==", userId), where("status", "==", status));
+    if (userId) {
+      q = query(ordersRef, where("userId", "==", userId), where("status", "==", status));
+    } else {
+      // admin, no user id
+      q = query(ordersRef, where("status", "==", status));
+    }
   }
 
   const snapshot = await getDocs(q);
