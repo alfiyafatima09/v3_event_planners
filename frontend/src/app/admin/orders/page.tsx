@@ -152,7 +152,7 @@ export default function AdminOrdersPage() {
                         {order.status.toUpperCase()}
                       </span>
                       <span className="text-gray-400 text-sm">
-                        {order.createdAt.toLocaleDateString()}
+                        {order.createdAt.toDate()?.toLocaleDateString()}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">{order.packageName}</h3>

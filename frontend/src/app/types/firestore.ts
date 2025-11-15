@@ -1,3 +1,5 @@
+import { Timestamp } from 'firebase/firestore';
+
 export interface EventPackage {
   id: string;
   category: string;
@@ -35,8 +37,8 @@ export interface Order {
   packageCost: string;
   packageInfo: string[];
   status: 'pending' | 'accepted' | 'rejected' | 'completed';
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
   adminNotes?: string;
 }
 

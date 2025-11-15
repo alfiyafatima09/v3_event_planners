@@ -42,7 +42,7 @@ body {
     transform: translateY(0px) rotate(0deg);
   }
 }
-
+  
 @keyframes shine {
   0% {
     background-position: -200% center;
@@ -71,10 +71,10 @@ body {
   animation: shine 4s linear infinite;
 }
 
-@layer base {
+/* @layer base {
   body {
     @apply bg-black overflow-x-hidden;
   }
-}
+} */
 
 

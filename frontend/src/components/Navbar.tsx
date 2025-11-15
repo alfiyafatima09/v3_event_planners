@@ -166,7 +166,7 @@ export default function Navbar() {
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex shrink-0 items-center">
                 <Link href="/" onClick={() => close()}>
-                  <Image src="/rounded_logo2.png" alt="logo" width={52} height={52} />
+                  <Image src="/rounded_logo.png" alt="logo" width={52} height={52} />
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:block">

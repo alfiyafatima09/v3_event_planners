@@ -15,6 +15,12 @@ import {
 import { db } from '@/app/lib/firebase';
 import { EventPackage, CategoryMetadata, PastEvent, Order, Feedback } from '@/app/types/firestore';
 
+type OrderStatusUpdate = {
+  status: Order["status"];
+  updatedAt: Timestamp;
+  adminNotes?: string;
+};
+
 // Event Packages
 export async function getEventPackages(category?: string): Promise<EventPackage[]> {
   try {
@@ -187,49 +193,69 @@ export async function createOrder(order: Omit<Order, 'id' | 'createdAt' | 'updat
   }
 }
 
-export async function getOrders(userId?: string, status?: Order['status']): Promise<Order[]> {
-  try {
-    const ordersRef = collection(db, 'orders');
-    const constraints: any[] = [];
+// export async function getOrders(userId?: string, status?: Order['status']): Promise<Order[]> {
+//   try {
+//     const ordersRef = collection(db, 'orders');
+//     const constraints: any[] = [];
     
-    if (userId) {
-      constraints.push(where('userId', '==', userId));
-    }
-    if (status) {
-      constraints.push(where('status', '==', status));
-    }
-    constraints.push(orderBy('createdAt', 'desc'));
+//     if (userId) {
+//       constraints.push(where('userId', '==', userId));
+//     }
+//     if (status) {
+//       constraints.push(where('status', '==', status));
+//     }
+//     constraints.push(orderBy('createdAt', 'desc'));
     
-    const q = query(ordersRef, ...constraints);
-    const snapshot = await getDocs(q);
-    return snapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: doc.id,
-        ...data,
-        createdAt: data.createdAt?.toDate(),
-        updatedAt: data.updatedAt?.toDate(),
-      } as Order;
-    });
-  } catch (error) {
-    console.error('Error fetching orders:', error);
-    throw error;
+//     const q = query(ordersRef, ...constraints);
+//     const snapshot = await getDocs(q);
+//     return snapshot.docs.map(doc => {
+//       const data = doc.data();
+//       return {
+//         id: doc.id,
+//         ...data,
+//         createdAt: data.createdAt?.toDate(),
+//         updatedAt: data.updatedAt?.toDate(),
+//       } as Order;
+//     });
+//   } catch (error) {
+//     console.error('Error fetching orders:', error);
+//     throw error;
+//   }
+// }
+export async function getOrders(userId: string, status?: string): Promise<Order[]> {
+  const ordersRef = collection(db, "orders");
+
+  let q = query(ordersRef, where("userId", "==", userId));
+
+  if (status) {
+    q = query(ordersRef, where("userId", "==", userId), where("status", "==", status));
   }
+
+  const snapshot = await getDocs(q);
+
+  return snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  })) as Order[];
 }
 
-export async function updateOrderStatus(orderId: string, status: Order['status'], adminNotes?: string): Promise<void> {
+export async function updateOrderStatus(
+  orderId: string,
+  status: Order['status'],
+  adminNotes?: string
+): Promise<void> {
   try {
     const docRef = doc(db, 'orders', orderId);
-    const updateData: any = {
+
+    const updateData: OrderStatusUpdate = {
       status,
       updatedAt: Timestamp.now(),
     };
-    
-    // Only add adminNotes if it's provided and not empty
+
     if (adminNotes && adminNotes.trim() !== '') {
       updateData.adminNotes = adminNotes.trim();
     }
-    
+
     await updateDoc(docRef, updateData);
   } catch (error) {
     console.error('Error updating order status:', error);
