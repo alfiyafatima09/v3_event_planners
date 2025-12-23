@@ -45,7 +45,7 @@ Ensure the following are installed:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guidelines](contributing.md) for details.
 
 1. Fork the repository
 2. Create your feature branch
