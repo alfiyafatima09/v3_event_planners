@@ -43,51 +43,16 @@ Ensure the following are installed:
 - **Node.js** (v14 or higher)
 - **npm** or **yarn**
 
-### How to Contribute
+## 🤝 Contributing
 
-1. **Fork** the repository.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-2. **Clone** your fork locally:
-   ```bash
-   git clone https://github.com/your-username/v3_event_planners.git
-   
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-3. **Create a new branch** for your changes:
+## License
 
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-4. **Make your changes**, ensuring:
-
-   * Code follows existing project structure
-   * Components remain reusable and readable
-   * TypeScript types are properly defined
-   
-5. **Test your changes** locally:
-
-   ```bash
-   npm run dev
-   ```
-6. **Commit** your changes with a clear message:
-
-   ```bash
-   git commit -m "feat: add new feature"
-   ```
-7. **Push** the branch to your fork:
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-8. **Open a Pull Request** against the `main` branch with:
-
-   * A clear description of the change
-   * Screenshots (if UI-related)
-   * Related issue references (if any)
-
-### Contribution Guidelines
-
-* Follow the existing **code style and conventions**
-* Keep pull requests **focused and minimal**
-* Avoid committing sensitive files (`.env.local`, keys, credentials)
-* Ensure UI changes remain **responsive**
-* Use meaningful commit messages
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
