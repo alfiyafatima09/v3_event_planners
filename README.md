@@ -3,10 +3,8 @@
 <img src="frontend/public/logo.png" alt="v3_event_planners Logo" width="100" align="right" />
 
 A modern event planning web platform built with Next.js, developed for a friend’s event planning startup to help users explore and plan different types of events through a clean, responsive, and scalable interface.
->
 
-
-## Features
+## ✨ Features
 
 - Support for multiple event categories:
   - Birthday Parties  
@@ -21,22 +19,18 @@ A modern event planning web platform built with Next.js, developed for a friend�
 - Modular and maintainable frontend architecture
 - Open-source friendly code structure
 
+## 🛠 Technology Stack
 
-## Technology Stack
-
-### Frontend
 - **Next.js**
 - **React**
 - **TypeScript**
 - **Tailwind CSS**
-
-### Services
 - **Firebase**
   - Authentication
   - Firestore Database
   - Hosting
 
-## Prerequisites
+## 📋 Prerequisites
 
 Ensure the following are installed:
 
@@ -53,6 +47,6 @@ We welcome contributions! Please see our [Contributing Guidelines](contributing.
 4. Push to the branch
 5. Create a Pull Request
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
