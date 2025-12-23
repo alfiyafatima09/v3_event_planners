@@ -1,81 +1,65 @@
-# Contributing to Events-Planner
 
-Thank you for considering contributing to the **Events-Planner** project! This project is part of my learning journey with Next.js and is being developed for a startup that my friend is working on. It aims to provide a comprehensive solution for managing events, from planning to execution. Your contributions are welcome and appreciated.
+# Contributing to V3-Event-Planners
+
+This project is built with Next.js for a startup and aims to provide a smooth platform for managing events.
 
 ## How to Contribute
 
-### 1. Fork the Repository
+1. **Fork the repository**  
+2. **Clone your fork**  
+   ```bash
+   git clone https://github.com/your-username/v3_event_planners.git
 
-Click on the "Fork" button at the top-right corner of this repository. This will create a copy of the repository in your GitHub account.
+3. **Create a branch**
 
-### 2. Clone Your Fork
+   ```bash
+   git checkout -b feature/<branch-name>
+   ```
 
-Clone your forked repository to your local machine:
+   Example: `feature/add-pagination` or `fix/error-handling`
 
-git clone [https://github.com/alfiyafatima09/v3_event_planners.git](https://github.com/alfiyafatima09/v3_event_planners.git)
+4. **Make your changes**
 
-### 3. Create a New Branch
+   * Follow existing coding standards and file structure
+   * Ensure your changes align with project goals
 
-Create a branch for your changes. Use a meaningful name that describes your contribution:
+5. **Test locally**
 
-git checkout -b feature/<branch-name>
+   ```bash
+   npm install
+   npm run dev
+   ```
 
+6. **Commit your changes**
 
-For example:
-- `feature/add-pagination`
-- `fix/error-handling`
+   ```bash
+   git add .
+   git commit -m "Add <description of changes>"
+   ```
 
-### 4. Make Your Changes
+7. **Push to your branch**
 
-- Follow the project's coding standards and file structure.
-- Ensure your changes align with the project's goals and learning objectives.
+   ```bash
+   git push origin feature/<branch-name>
+   ```
 
-### 5. Test Your Changes
+8. **Open a Pull Request**
 
-Run the application locally to test your changes and ensure everything works correctly:
+   * Navigate to the original repository → Pull Requests → New Pull Request
+   * Select your branch and describe your changes clearly
 
-npm install
-pnpm run dev
-
-### 6. Commit Your Changes
-
-Use clear and descriptive commit messages:
-
-git add . git commit -m "Add <description of changes>"
-
-For example:
-- `"Add pagination to the dashboard"`
-- `"Fix error handling in user login"`
-
-### 7. Push Your Changes
-
-Push your branch to your forked repository:
-
-git push origin feature/<branch-name>
-
-
-### 8. Create a Pull Request
-
-- Navigate to the original repository.
-- Click the "Pull Requests" tab.
-- Select "New Pull Request" and choose your branch.
-- Add a description explaining your changes and improvements.
-
----
 
 ## Guidelines
 
-- Be respectful and collaborative.
-- Keep code and comments clean and concise.
-- Ensure compatibility with existing features.
-- Provide appropriate documentation for new features or changes.
+* Be respectful and collaborative
+* Keep code clean and concise
+* Maintain compatibility with existing features
+* Document new features or changes appropriately
 
----
 
 ## Reporting Issues
 
-If you find bugs or have suggestions, feel free to open an issue. Provide as much detail as possible to help us understand and address the problem.
+If you encounter bugs or have suggestions, open an issue with detailed information to help us address it.
 
----
 
-Thank you for helping improve the **Events-Planner**! Together, we can make this project even better. 🎉
+Thank you for contributing to **V3-Events-Planner**! 🎉
