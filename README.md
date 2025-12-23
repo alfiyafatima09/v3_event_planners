@@ -1,6 +1,10 @@
 # V3_event_planners
 
+<img src="frontend/public/logo.png" alt="v3_event_planners Logo" width="80" align="right" />
+
 A modern event planning web platform built with Next.js, developed for a friend’s event planning startup to help users explore and plan different types of events through a clean, responsive, and scalable interface.
+>
+
 
 ## Features
 
@@ -38,20 +42,11 @@ Ensure the following are installed:
 
 - **Node.js** (v14 or higher)
 - **npm** or **yarn**
-- A **Firebase** project
-
-Here is a **complete, professional, GitHub-standard `Contributing` section**, clean and open-source friendly.
-You can **paste this directly into your `README.md`**.
-
----
-
-## Contributing
-
-Contributions are welcome and appreciated. Whether you're fixing a bug, improving documentation, or adding a new feature, your help makes this project better.
 
 ### How to Contribute
 
 1. **Fork** the repository.
+
 2. **Clone** your fork locally:
    ```bash
    git clone https://github.com/your-username/v3_event_planners.git
@@ -96,5 +91,3 @@ Contributions are welcome and appreciated. Whether you're fixing a bug, improvin
 * Avoid committing sensitive files (`.env.local`, keys, credentials)
 * Ensure UI changes remain **responsive**
 * Use meaningful commit messages
-
----
