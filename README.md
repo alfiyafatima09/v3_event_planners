@@ -1,6 +1,6 @@
 # V3_event_planners
 
-<img src="frontend/public/logo.png" alt="v3_event_planners Logo" width="80" align="right" />
+<img src="frontend/public/logo.png" alt="v3_event_planners Logo" width="100" align="right" />
 
 A modern event planning web platform built with Next.js, developed for a friend’s event planning startup to help users explore and plan different types of events through a clean, responsive, and scalable interface.
 >
